@@ -20,25 +20,27 @@
 									<th>Total</th>
 								</tr>
 							</thead>
-							<tbody id="cart">
+							<tbody>
+						@foreach($content as $c)
 								<tr>
 									<td><input type="checkbox" value="option1"></td>
-									<td><a href=""><img alt="" src=""></a></td>
-									<td>Fusce id molestie massa</td>
-									<td><input type="text" placeholder="1" class="input-mini"></td>
-									<td>$2,350.00</td>
-									<td>$2,350.00</td>
-								</tr>			  
-					
+									<td><a href=""><img alt="" src=></a></td>
+									<td>{{$c->name}}</td>
+									<td><input type="text" placeholder="{{$c->qty}}" class="input-mini"></td>
+									<td></td>
+									<td></td>
+								</tr>		
+						@endforeach
 								<tr>
+									<td><img src=""></td>
+									<td></td>
 									<td>&nbsp;</td>
 									<td>&nbsp;</td>
 									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td><strong>$3,600.00</strong></td>
-								</tr>		  
+									<td><strong></strong></td>
+								</tr>	
 							</tbody>
+
 						</table>
 						<h4>Bạn muốn làm gì tiếp theo</h4>
 						<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>

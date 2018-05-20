@@ -22,14 +22,6 @@ class AppServiceProvider extends ServiceProvider
             $view->with('pt_1',$product_type_1);
             $view->with('pt_0',$product_type_0);
         });
-
-        view()->composer(['header','page.cart'],function($view){
-            if(Session('cart')){
-                $oldCart = Session::get('cart');
-                $cart = new Cart($oldCart);
-                $view->with(['cart'=>Session::get('cart'), 'product_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
-            }
-        });
     }
 
     /**

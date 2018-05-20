@@ -54,7 +54,7 @@
 									<p>&nbsp;</p>
 									<label>Số lượng:</label>
 									<input type="text" class="span1" placeholder="1">
-									<button href="{{route('giohangchinh')}}" class="btn btn-inverse" type="submit">Thêm vào giỏ</button>
+									<a href="{{route('muahang',[$sanpham->id,$sanpham->name])}}" class="btn btn-inverse" type="submit">Thêm vào giỏ</a>
 								</form>
 							</div>							
 						</div>
@@ -161,7 +161,7 @@
 						<div class="block">	
 							<ul class="nav nav-list">
 								<li class="nav-header">SUB CATEGORIES</li>
-								<li><a href="{{route('giohangchinh')}}">Nullam semper elementum</a></li>
+								<li><a href="">Nullam semper elementum</a></li>
 								<li class="active"><a href="products.html">Phasellus ultricies</a></li>
 								<li><a href="products.html">Donec laoreet dui</a></li>
 								<li><a href="products.html">Nullam semper elementum</a></li>

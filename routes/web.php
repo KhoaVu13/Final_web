@@ -19,9 +19,9 @@ Route::get('index',[
 'as' =>'trangchu',
 'uses'=>'PageController@getIndex'
 ]);
-Route::get('add_cart/{id}',[
-'as' =>'themgiohang',
-'uses'=>'PageController@getAddCart'
+Route::get('dat_hang',[
+    'as' => 'dathang',
+    'uses'=>'PageController@getMainCart'
 ]);
 Route::get('contact',[
 'as' =>'lienhe',
@@ -43,7 +43,5 @@ Route::get('checkout',[
 'as' =>'thanhtoan',
 'uses'=>'PageController@getCheckOut'
 ]);
-Route::get('main_cart',[
-'as' => 'giohangchinh',
-'uses'=>'PageController@getMainCart'
-]);
+Route::get('mua_hang/{id}/{tensanpham}',['as'=>'muahang','uses'=>'PageController@muahang']);
+Route::get('gio_hang',['as'=>'giohang','uses'=>'PageController@giohang']);

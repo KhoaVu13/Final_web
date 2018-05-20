@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Slide;
 use App\Products;
 use App\ProductsType;
-use App\Cart;
+use Cart;
 Use Session;
 class PageController extends Controller
 {
@@ -22,14 +22,6 @@ class PageController extends Controller
         
         
 }
-       public function getAddCart(Request $req, $id){
-        $product = Product::find($id);
-        $oldCart = Session('cart')?Session::get('cart'):null;
-        $cart = new Cart($oldCart);
-        $cart->add($product,$id);
-        $req->session()->put('cart',$cart);
-       return redirect()->back();
-    }
     public function getMainCart()
     {
         return view('page.cart');
@@ -51,6 +43,18 @@ class PageController extends Controller
         //echo $sp_theoloai;}
     public function getRegister(){
     	return view('page.register');
+    }
+    public function muahang($id){
+    $products_buy = Products::where('id',$id)->first();
+    Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->unit_price,'discount'=>0.00,'option'=>array('img'=>$products_buy->image)));
+    $content = Cart::content();
+    //return redirect()->route('giohang');
+    return view('page.cart',compact('content'));
+    //print_r($content);
+    }
+    public function giohang(){
+        $content = Cart::content();
+        return view('page.cart',compact('content'));
     }
 }
 
