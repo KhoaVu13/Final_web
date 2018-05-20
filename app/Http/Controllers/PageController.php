@@ -46,11 +46,13 @@ class PageController extends Controller
     }
     public function muahang($id){
     $products_buy = Products::where('id',$id)->first();
-    Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->unit_price,'discount'=>0.00,'option'=>array('img'=>$products_buy->image)));
+    Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->unit_price,'discount'=>0.00,'options'=>array('img'=>$products_buy->image)));
     $content = Cart::content();
+    $total = Cart::total();
     //return redirect()->route('giohang');
-    return view('page.cart',compact('content'));
+    return view('page.cart',compact('content','total'));
     //print_r($content);
+
     }
     public function giohang(){
         $content = Cart::content();

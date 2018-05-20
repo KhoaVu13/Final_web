@@ -12,23 +12,23 @@
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>Remove</th>
-									<th>Image</th>
-									<th>Product Name</th>
-									<th>Quantity</th>
-									<th>Unit Price</th>
-									<th>Total</th>
+									<th>Xóa</th>
+									<th>Sản Phẩm</th>
+									<th>Tên Sản Phẩm</th>
+									<th>Số Lượng</th>
+									<th>Giá</th>
+									<th>Tổng Tiền</th>
 								</tr>
 							</thead>
 							<tbody>
 						@foreach($content as $c)
 								<tr>
 									<td><input type="checkbox" value="option1"></td>
-									<td><a href=""><img alt="" src=></a></td>
+									<td><a href=""><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td>{{$c->name}}</td>
 									<td><input type="text" placeholder="{{$c->qty}}" class="input-mini"></td>
-									<td></td>
-									<td></td>
+									<td>{{number_format($c->price)}} đ</td>
+									<td>{{number_format($c->price*$c->qty)}} đ</td>
 								</tr>		
 						@endforeach
 								<tr>
@@ -43,52 +43,52 @@
 
 						</table>
 						<h4>Bạn muốn làm gì tiếp theo</h4>
-						<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+						<p>Các loại mã giảm giá</p>
 						<label class="radio">
 							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-							Use Coupon Code
+							Mã giảm giá
 						</label>
 						<label class="radio">
 							<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-							Estimate Shipping &amp; Taxes
+							Thành viên VIP
 						</label>
 						<hr>
 						<p class="cart-total right">
-							<strong>Sub-Total</strong>:	$100.00<br>
-							<strong>Eco Tax (-2.00)</strong>: $2.00<br>
-							<strong>VAT (17.5%)</strong>: $17.50<br>
-							<strong>Total</strong>: $119.50<br>
+							<strong>Tổng tiền</strong>: {{number_format($total)}} đ<br>
+							<strong>Giảm Giá</strong>: VIP--10%<br>
+							<strong>VAT</strong>: 10%<br>
+							<strong>Tổng hóa đơn</strong>: {{number_format($total*0.8)}} đ<br>
 						</p>
 						<hr/>
 						<p class="buttons center">				
-							<button class="btn" type="button">Update</button>
-							<button class="btn" type="button">Continue</button>
-							<button class="btn btn-inverse" type="submit" id="checkout">Checkout</button>
+							<button class="btn" type="button">Cập nhật</button>
+							<button class="btn" type="button">Tiếp tục</button>
+							<button class="btn btn-inverse" type="submit" id="checkout">Thanh Toán</button>
 						</p>					
 					</div>
 					<div class="span3 col">
 						<div class="block">	
 							<ul class="nav nav-list">
-								<li class="nav-header">SUB CATEGORIES</li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li class="active"><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
+								<li class="nav-header">Liên quan</li>
+								<li><a href="products.html">Thời Trang Gym Shark</a></li>
+								<li class="active"><a href="products.html">Thời Trang Gym Shark</a></li>
+								<li><a href="products.html">Thời Trang Gym Shark</a></li>
+								<li><a href="products.html">Thời Trang Gym Shark</a></li>
+								<li><a href="products.html">Thời Trang Gym Shark</a></li>
+								<li><a href="products.html">Thời Trang Gym Shark</a></li>
 							</ul>
 							<br/>
 							<ul class="nav nav-list below">
-								<li class="nav-header">MANUFACTURES</li>
+								<li class="nav-header">Nhà cung cấp</li>
 								<li><a href="products.html">Adidas</a></li>
 								<li><a href="products.html">Nike</a></li>
-								<li><a href="products.html">Dunlop</a></li>
-								<li><a href="products.html">Yamaha</a></li>
+								<li><a href="products.html">Convert</a></li>
+								<li><a href="products.html">Puma</a></li>
 							</ul>
 						</div>
 						<div class="block">
 							<h4 class="title">
-								<span class="pull-left"><span class="text">Randomize</span></span>
+								<span class="pull-left"><span class="text">Vừa xem</span></span>
 								<span class="pull-right">
 									<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
 								</span>
@@ -101,9 +101,9 @@
 												<div class="product-box">
 													<span class="sale_tag"></span>												
 													<a href="product_detail.html"><img alt="" src="themes/images/ladies/2.jpg"></a><br/>
-													<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
-													<a href="#" class="category">Suspendisse aliquet</a>
-													<p class="price">$261</p>
+													<a href="product_detail.html" class="title"></a><br/>
+													<a href="#" class="category">Mã Sản Phẩm: </a>
+													<p class="price">Giá: </p>
 												</div>
 											</li>
 										</ul>
