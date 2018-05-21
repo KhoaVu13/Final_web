@@ -24,9 +24,10 @@
 						@foreach($content as $c) 
 								<tr>
 									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" href="" src="themes/images/sport/{{$c->options->img}}"></a></td>
-									<td><a href=""><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
+									<td><a href="{{route('thongtinsanpham',$c->id)}}"><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td>{{$c->name}}</td>
-									<td><input type="text" placeholder="{{$c->qty}} " class="input-mini"></td>
+									<td><input type="text" placeholder="{{$c->qty}}" class="input-mini"></td>
+									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->
 									<td>{{number_format($c->price)}} đ</td>
 									<td>{{number_format($c->price*$c->qty)}} đ</td>
 								</tr>		
