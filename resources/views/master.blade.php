@@ -22,6 +22,9 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>				
 		<script src="themes/js/superfish.js"></script>	
 		<script src="themes/js/jquery.scrolltotop.js"></script>
+		
+
+
 		<!--[if lt IE 9]>			
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="js/respond.min.js"></script>
@@ -47,5 +50,6 @@
 				});
 			});
 		</script>
+	<script src="themes/js/myscript.js"></script>
     </body>
 </html>

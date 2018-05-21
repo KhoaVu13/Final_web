@@ -12,24 +12,28 @@
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>Xóa</th>
 									<th>Sản Phẩm</th>
 									<th>Tên Sản Phẩm</th>
 									<th>Số Lượng</th>
 									<th>Giá</th>
 									<th>Tổng Tiền</th>
+									<th>Cập Nhật</th>
+									<th>Xóa</th>
 								</tr>
 							</thead>
 							<tbody>
+								<form method="POST" action="">
+									<input type="hidden" name="_token" value="{{csrf_token()}}">
 						@foreach($content as $c) 
 								<tr>
-									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" href="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td><a href="{{route('thongtinsanpham',$c->id)}}"><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
-									<td>{{$c->name}}</td>
+									<td><strong style="color: blue">{{$c->name}}</strong></td>
 									<td><input type="text" placeholder="{{$c->qty}}" class="input-mini"></td>
 									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->
 									<td>{{number_format($c->price)}} đ</td>
 									<td>{{number_format($c->price*$c->qty)}} đ</td>
+									<td><a href="" class="Update" id="{{$c->rowid}}"><img width="25px" height="25px" src="themes/images/icon/update.png/"></a></td>
+									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" href="" src="themes/images/icon/delete.png/"></a></td>
 								</tr>		
 						@endforeach
 								<tr>
@@ -41,7 +45,7 @@
 									<td><strong></strong></td>
 								</tr>	
 							</tbody>
-
+							</form>
 						</table>
 						<h4>Bạn muốn làm gì tiếp theo</h4>
 						<p>Các loại mã giảm giá</p>
