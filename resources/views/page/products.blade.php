@@ -9,7 +9,7 @@
 					<div class="span9">								
 						<ul class="thumbnails listing-products">
 							@foreach($sp_theoloai as $sp)
-							<li class="span3">
+							<li class="span3" style="width: 200px;">
 								<div class="product-box">
 									<span class="sale_tag"></span>												
 									<a href="{{route('thongtinsanpham',$sp->id)}}"><img alt="" src="themes/images/sport/{{$sp->image}}"></a><br/>
