@@ -19,13 +19,7 @@ class PageController extends Controller
         $newproduct_2 = Products::find([16]);
         $count = count($newproduct_0)+count($newproduct_1)+count($newproduct_2);
     	return view('page.index',compact('slide','slide2','newproduct_0','newproduct_1','newproduct_2','count'));
-        
-        
 }
-    public function getMainCart()
-    {
-        return view('page.cart');
-    }
      public function getCheckOut(){
     	return view('page.checkout');
     }

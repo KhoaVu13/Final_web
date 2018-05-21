@@ -26,7 +26,7 @@
 									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" href="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td><a href=""><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td>{{$c->name}}</td>
-									<td><input type="text" placeholder="{{$c->qty}}" class="input-mini"></td>
+									<td><input type="text" placeholder="{{$c->qty}} " class="input-mini"></td>
 									<td>{{number_format($c->price)}} đ</td>
 									<td>{{number_format($c->price*$c->qty)}} đ</td>
 								</tr>		
@@ -55,9 +55,9 @@
 						<hr>
 						<p class="cart-total right">
 							<strong>Tổng tiền</strong>: {{number_format($total)}} đ<br>
-							<strong>Giảm Giá</strong>: VIP--10%<br>
-							<strong>VAT</strong>: 10%<br>
-							<strong>Tổng hóa đơn</strong>: {{number_format($total*0.8)}} đ<br>
+							<strong>Giảm Giá</strong>: VIP: 10%<br>
+							<strong>VAT</strong>: 20%<br>
+							<strong>Tổng hóa đơn</strong>: {{number_format($total*0.9)}} đ<br>
 						</p>
 						<hr/>
 						<p class="buttons center">				
