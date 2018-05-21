@@ -23,9 +23,7 @@
 						</ul>								
 						<hr>
 						<div class="pagination pagination-small pagination-centered">
-							<ul>
-								<div>{{$sp_theoloai->links()}}</div>
-							</ul>
+								{{$sp_theoloai->links()}}
 						</div>
 					</div>
 					<div class="span3 col">
