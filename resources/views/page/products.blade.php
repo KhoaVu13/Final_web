@@ -9,7 +9,7 @@
 					<div class="span9">								
 						<ul class="thumbnails listing-products">
 							@foreach($sp_theoloai as $sp)
-							<li class="span3">
+							<li class="span3" style="width: 200px;">
 								<div class="product-box">
 									<span class="sale_tag"></span>												
 									<a href="{{route('thongtinsanpham',$sp->id)}}"><img alt="" src="themes/images/sport/{{$sp->image}}"></a><br/>
@@ -23,14 +23,7 @@
 						</ul>								
 						<hr>
 						<div class="pagination pagination-small pagination-centered">
-							<ul>
-								<li><a href="#">Prev</a></li>
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">Next</a></li>
-							</ul>
+								{{$sp_theoloai->links()}}
 						</div>
 					</div>
 					<div class="span3 col">

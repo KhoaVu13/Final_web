@@ -31,7 +31,7 @@ class PageController extends Controller
     	return view('page.product_detail',compact('sanpham'));
     }
     public function getProducts($type){
-        $sp_theoloai=Products::where('id_type',$type)->get();
+        $sp_theoloai=Products::where('id_type',$type)->paginate(4);
     	return view('page.products',compact('sp_theoloai'));
             }
         //echo $sp_theoloai;}
