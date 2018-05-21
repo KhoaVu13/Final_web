@@ -43,5 +43,6 @@ Route::get('checkout',[
 'as' =>'thanhtoan',
 'uses'=>'PageController@getCheckOut'
 ]);
-Route::get('mua_hang/{id}/{tensanpham}',['as'=>'muahang','uses'=>'PageController@muahang']);
+Route::get('mua_hang/{id}',['as'=>'muahang','uses'=>'PageController@muahang']);
 Route::get('gio_hang',['as'=>'giohang','uses'=>'PageController@giohang']);
+Route::get('xoa_san_pham/{id}',['as'=>'xoasanpham','uses'=>'PageController@xoasanpham']);

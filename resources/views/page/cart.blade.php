@@ -8,7 +8,7 @@
 			<section class="main-content">				
 				<div class="row">
 					<div class="span9">					
-						<h4 class="title"><span class="text"><strong>Your</strong> Cart</span></h4>
+						<h4 class="title"><span class="text"><strong>Giỏ</strong> Hàng</span></h4>
 						<table class="table table-striped">
 							<thead>
 								<tr>
@@ -21,9 +21,9 @@
 								</tr>
 							</thead>
 							<tbody>
-						@foreach($content as $c)
+						@foreach($content as $c) 
 								<tr>
-									<td><input type="checkbox" value="option1"></td>
+									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" href="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td><a href=""><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td>{{$c->name}}</td>
 									<td><input type="text" placeholder="{{$c->qty}}" class="input-mini"></td>
@@ -61,7 +61,6 @@
 						</p>
 						<hr/>
 						<p class="buttons center">				
-							<button class="btn" type="button">Cập nhật</button>
 							<button class="btn" type="button">Tiếp tục</button>
 							<button class="btn btn-inverse" type="submit" id="checkout">Thanh Toán</button>
 						</p>					

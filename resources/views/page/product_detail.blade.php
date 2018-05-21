@@ -54,7 +54,7 @@
 									<p>&nbsp;</p>
 									<label>Số lượng:</label>
 									<input type="text" class="span1" placeholder="1">
-									<a href="{{route('muahang',[$sanpham->id,$sanpham->name])}}" class="btn btn-inverse" type="submit">Thêm vào giỏ</a>
+									<a href="{{route('muahang',$sanpham->id)}}" class="btn btn-inverse" type="submit">Thêm vào giỏ</a>
 								</form>
 							</div>							
 						</div>
