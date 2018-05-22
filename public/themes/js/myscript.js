@@ -15,7 +15,6 @@ $(document).ready(function()
 					if(data == "ok")
 					{
 						window.location="gio_hang";
-						//alert("YEAH");
 					}
 				}
 			});

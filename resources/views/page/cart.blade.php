@@ -47,8 +47,8 @@
 							</tbody>
 							</form>
 						</table>
-						<h4>Bạn muốn làm gì tiếp theo</h4>
-						<p>Các loại mã giảm giá</p>
+						<h4 style="color: blue">Mã Giảm Giá/ Quà Tặng</h4>
+						<!--<p>Các loại mã giảm giá</p>
 						<label class="radio">
 							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
 							Mã giảm giá
@@ -56,11 +56,13 @@
 						<label class="radio">
 							<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
 							Thành viên VIP
-						</label>
+						</label>-->
+						<a><input type="text" placeholder="Nhập ở đây"></a><br>
+						<a><button class="btn" type="button">Xác Nhận</button></a>
 						<hr>
 						<p class="cart-total right">
 							<strong>Tổng tiền</strong>: {{number_format($total)}} đ<br>
-							<strong>Giảm Giá</strong>: VIP: 10%<br>
+							<strong>Giảm Giá</strong><br>
 							<strong>VAT</strong>: 20%<br>
 							<strong>Tổng hóa đơn</strong>: {{number_format($total*0.9)}} đ<br>
 						</p>
