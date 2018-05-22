@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Slide;
 use App\Products;
 use App\ProductsType;
 use Cart;
 Use Session;
+use Request;
 class PageController extends Controller
 {
      public function getIndex(){
@@ -63,7 +64,10 @@ class PageController extends Controller
     {
         if(Request::ajax())
             {
-                echo "oke";
+                $id = Request::get('id');
+                $qty = Request::input('qty');
+                Cart::update($id,$qty);
+                echo "ok";
             }
     }
  }

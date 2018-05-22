@@ -9,14 +9,15 @@ $(document).ready(function()
 				url: 'cap_nhat_san_pham/'+rowid+'/'+qty,
 				type: 'GET',
 				cache:false,
-				data:{"_token":token,"id"=>rowid,"qty":qty},
+				data:{"_token":token,"id":rowid,"qty":qty},
 				success:function(data)
 				{	
-					if(data=="oke")
+					if(data == "ok")
 					{
-						alert("yes");
+						window.location="gio_hang";
+						//alert("YEAH");
 					}
 				}
-			})
+			});
 		});
 })

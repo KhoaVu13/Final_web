@@ -28,12 +28,12 @@
 								<tr>
 									<td><a href="{{route('thongtinsanpham',$c->id)}}"><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td><strong style="color: blue">{{$c->name}}</strong></td>
-									<td><input class="qty" type="number" min="1" placeholder="{{$c->qty}}" ></td>
+									<td><input class="qty" type="text" placeholder="{{$c->qty}}"></td>
 									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->
 									<td>{{number_format($c->price)}} đ</td>
 									<td>{{number_format($c->price*$c->qty)}} đ</td>
-									<td><a href="" class="Update" id="{{$c->rowid}}"><img width="25px" height="25px" src="themes/images/icon/update.png/"></a></td>
-									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" src="themes/images/icon/delete.png/"></a></td>
+									<td><a class="Update" id="{{$c->rowid}}"><img width="25px" height="25px" src="themes/images/icon/update.png"></a></td>
+									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" src="themes/images/icon/delete.png"></a></td>
 								</tr>		
 						@endforeach
 								<tr>

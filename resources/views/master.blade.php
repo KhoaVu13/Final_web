@@ -22,7 +22,7 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>				
 		<script src="themes/js/superfish.js"></script>	
 		<script src="themes/js/jquery.scrolltotop.js"></script>
-		
+		<script src="themes/js/myscript.js"></script>
 		
 
 
@@ -51,6 +51,5 @@
 				});
 			});
 		</script>
-		<script src="themes/js/myscript.js"></script>
     </body>
 </html>
