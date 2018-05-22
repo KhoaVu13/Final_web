@@ -58,6 +58,14 @@ class PageController extends Controller
         Cart::remove($id);
         return redirect()->route('giohang');
     }
+
+    public function capnhatsanpham()
+    {
+        if(Request::ajax())
+            {
+                echo "oke";
+            }
+    }
  }
 
 
