@@ -15,7 +15,12 @@
 									<a href="{{route('thongtinsanpham',$sp->id)}}"><img alt="" src="themes/images/sport/{{$sp->image}}"></a><br/>
 									<a href="{{route('thongtinsanpham',$sp->id)}}" class="title">{{$sp->name}}</a><br/>
 									<a href="{{route('thongtinsanpham',$sp->id)}}" class="category"></a>
-									<p style="color:red" class="price">{{number_format($sp->unit_price)}} VNĐ</p>
+									@if(($sp->promotion_price)==0)
+									<p class="flash-sale">{{number_format($sp->unit_price)}} VNĐ</p>
+									@else
+									<p class="flash-del">{{number_format($sp->unit_price)}} VNĐ</p>
+									<p class="flash-sale">{{number_format($sp->promotion_price)}} VNĐ</p>
+									@endif
 								</div>
 							</li>       
 							@endforeach
