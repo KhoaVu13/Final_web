@@ -32,8 +32,8 @@
 									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->
 									<td>{{number_format($c->price)}} đ</td>
 									<td>{{number_format($c->price*$c->qty)}} đ</td>
-									<td><a class="Update" id="{{$c->rowid}}"><img width="25px" height="25px" src="themes/images/icon/update.png/"></a></td>
-									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" href="" src="themes/images/icon/delete.png/"></a></td>
+									<td><a href="" class="Update" id="{{$c->rowid}}"><img width="25px" height="25px" src="themes/images/icon/update.png/"></a></td>
+									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" src="themes/images/icon/delete.png/"></a></td>
 								</tr>		
 						@endforeach
 								<tr>

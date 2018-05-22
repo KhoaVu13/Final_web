@@ -10,11 +10,11 @@ $(document).ready(function()
 				type: 'GET',
 				cache:false,
 				data:{"_token":token,"id"=>rowid,"qty":qty},
-				success: function(data)
+				success:function(data)
 				{	
 					if(data=="oke")
 					{
-						alert("YES");
+						alert("yes");
 					}
 				}
 			})

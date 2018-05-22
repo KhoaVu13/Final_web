@@ -23,6 +23,7 @@
 		<script src="themes/js/superfish.js"></script>	
 		<script src="themes/js/jquery.scrolltotop.js"></script>
 		
+		
 
 
 		<!--[if lt IE 9]>			
@@ -50,6 +51,6 @@
 				});
 			});
 		</script>
-	<script src="themes/js/myscript.js"></script>
+		<script src="themes/js/myscript.js"></script>
     </body>
 </html>
