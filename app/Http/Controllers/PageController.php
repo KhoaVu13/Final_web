@@ -27,8 +27,8 @@ class PageController extends Controller
     public function getContact(){
     	return view('page.contact');
     }
-     public function getPD(Request $req){
-        $sanpham = Products::where('id',$req->id)->first();
+     public function getPD($id){
+        $sanpham = Products::where('id',$id)->first();
     	return view('page.product_detail',compact('sanpham'));
     }
     public function getProducts($type){
