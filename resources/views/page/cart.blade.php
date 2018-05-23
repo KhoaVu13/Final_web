@@ -8,7 +8,7 @@
 			<section class="main-content">				
 				<div class="row">
 					<div class="span9">					
-						<h4 class="title"><span class="text"><strong>Giỏ</strong> Hàng</span></h4>
+						<h4 class="title"><span class="text"><strong>Giỏ</strong></span></h4>
 						<table class="table table-striped">
 							<thead>
 								<tr>

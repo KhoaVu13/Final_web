@@ -51,7 +51,8 @@ class PageController extends Controller
     {
         $content = Cart::content();
         $total = Cart::total();
-        return view('page.cart',compact('content','total'));
+        $count = Cart::count(false); 
+        return view('page.cart',compact('content','total','count'));
     }
 
     public function xoasanpham($id)
@@ -70,6 +71,7 @@ class PageController extends Controller
                 echo "ok";
             }
     }
+
  }
 
 
