@@ -31,7 +31,7 @@
 									<strong>Mã sản phẩm : </strong> <span>{{$sanpham->id}}</span><br>
 									<strong>Điểm tích lũy : </strong> <span>0</span><br>
 									<strong>Tình trạng : </strong> 
-									<span>
+									<span class="qty">
 										@if($sanpham->qty>0)
 										<b style="color:green;">Còn hàng</b>
 										@else
@@ -60,7 +60,11 @@
 									<p>&nbsp;</p>
 									<label>Số lượng:</label>
 									<input type="text" class="span1" placeholder="1">
-									<a href="{{route('muahang',$sanpham->id)}}" class="btn btn-inverse" type="submit">Thêm vào giỏ</a>
+									@if($sanpham->qty>0)
+									<a href="{{route('muahang',$sanpham->id)}}"  class="btn btn-inverse" type="submit">Thêm vào giỏ</a>
+									@else
+									<a style="red"><strong>Sản Phẩm Hết Hàng</strong></a>
+									@endif
 								</form>
 							</div>							
 						</div>
