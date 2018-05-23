@@ -41,17 +41,20 @@ class PageController extends Controller
     }
     public function muahang($id){
     $products_buy = Products::where('id',$id)->first();
-    Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->unit_price,'discount'=>0.00,'options'=>array('img'=>$products_buy->image)));
+    if ($products_buy->promotion_price!=0) {
+       Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->promotion_price,'discount'=>0.00,'options'=>array('img'=>$products_buy->image)));
+    }
+    else
+    {Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->unit_price,'discount'=>0.00,'options'=>array('img'=>$products_buy->image)));}
     $content = Cart::content();
-    //print_r($content);
-    return redirect()->route('giohang');
+       return redirect()->route('giohang');
     }
 
     public function giohang()
     {
         $content = Cart::content();
         $total = Cart::total();
-        $count = Cart::count(false); 
+         
         return view('page.cart',compact('content','total','count'));
     }
 

@@ -52,6 +52,7 @@
 														<a href="{{route('thongtinsanpham',$np->id)}}" class="title">{{$np->name}}</a><br/>
 														<a href="" class="category"></a>
 														<p class="price">{{number_format($np->unit_price)}} VNĐ</p>
+														<p class="price">{{number_format($np->promotion_price)}} VNĐ</p>
 													</div>
 												</li>	
 											@endforeach
@@ -68,6 +69,7 @@
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="title">{{$np1->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="category"></a>
 														<p class="price" >{{number_format($np1->unit_price)}} VNĐ</p>
+														<p class="price" >{{number_format($np1->promotion_price)}} VNĐ</p>
 													</div>
 												</li>		
 												@endforeach																							
@@ -84,6 +86,7 @@
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="title">{{$np2->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="category"></a>
 														<p class="price" >{{number_format($np2->unit_price)}} VNĐ</p>
+														<p class="price" >{{number_format($np2->promotion_price)}} VNĐ</p>
 													</div>
 												</li>		
 												@endforeach																							

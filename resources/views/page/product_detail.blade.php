@@ -40,7 +40,13 @@
 									</span><br>					
 
 								</address>									
-								<h4><strong>Giá bán : {{number_format($sanpham->unit_price)}} đ</strong></h4>
+								<h4><strong>
+									@if($sanpham->promotion_price!=0)
+									Giá bán : {{number_format($sanpham->promotion_price)}} đ
+									@else
+									Giá bán : {{number_format($sanpham->unit_price)}} đ
+									@endif
+								</strong></h4>
 							</div>
 							<div class="span5">
 								<form class="form-inline">
