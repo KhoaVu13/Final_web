@@ -32,32 +32,52 @@
 						</form>				
 					</div>
 					<div class="span7">					
-						<h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
+						<h4 class="title"><span class="text"><strong>Đăng</strong> Ký</span></h4>
 						<form action="#" method="post" class="form-stacked">
 							<fieldset>
 								<div class="control-group">
-									<label class="control-label">Username</label>
+									<label class="control-label">Emails</label>
 									<div class="controls">
-										<input type="text" placeholder="Enter your username" class="input-xlarge">
+										<input type="text" name="emails" placeholder="Nhập vào emails" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">
-									<label class="control-label">Email address:</label>
+									<label class="control-label">Họ và Tên:</label>
 									<div class="controls">
-										<input type="password" placeholder="Enter your email" class="input-xlarge">
+										<input type="password" name="fullname" placeholder="Nhập vào họ và tên" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">
-									<label class="control-label">Password:</label>
+									<label class="control-label">Địa Chỉ:</label>
 									<div class="controls">
-										<input type="password" placeholder="Enter your password" class="input-xlarge">
+										<input type="password" name="address" placeholder="Nhập địa chỉ" class="input-xlarge">
 									</div>
-								</div>							                            
-								<div class="control-group">
-									<p>Now that we know who you are. I'm not a mistake! In a comic, you know how you can tell who the arch-villain's going to be?</p>
 								</div>
+								<div class="control-group">
+									<label class="control-label">Số Điện Thoại:</label>
+									<div class="controls">
+										<input type="password" name="phone" placeholder="Nhập vào số điện thoại" class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Nhập Mật Khẩu:</label>
+									<div class="controls">
+										<input type="password" name="password" placeholder="Nhập mật khẩu" class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Nhập Lại Mật Khẩu:</label>
+									<div class="controls">
+										<input type="password" name="re_password" placeholder="Nhập lại mật khẩu" class="input-xlarge">
+									</div>
+								</div>
+								@if(Session::has('thanhcong'))								                            
+								<div class="control-group">
+									<p>{{Session::get('thanhcong')}}</p>
+								</div>
+								@endif
 								<hr>
-								<div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Create your account"></div>
+								<div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Tạo Tài Khoản"></div>
 							</fieldset>
 						</form>					
 					</div>				

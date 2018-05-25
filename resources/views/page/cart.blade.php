@@ -17,7 +17,7 @@
 									<th>Số Lượng</th>
 									<th>Giá</th>
 									<th>Tổng Tiền</th>
-									<th>Cập Nhật</th>
+									<th>Cập Nhật SL</th>
 									<th>Xóa</th>
 								</tr>
 							</thead>
@@ -28,7 +28,7 @@
 								<tr>
 									<td><a href="{{route('thongtinsanpham',$c->id)}}"><img width="128px" height="128px" alt="" src="themes/images/sport/{{$c->options->img}}"></a></td>
 									<td><strong style="color: blue">{{$c->name}}</strong></td>
-									<td><input class="qty" type="text" placeholder="{{$c->qty}}"></td>
+									<td><input class="qty" type="number" placeholder="{{$c->qty}}"></td>
 									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->
 									<td>{{number_format($c->price)}} đ</td>
 									<td>{{number_format($c->price*$c->qty)}} đ</td>

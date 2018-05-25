@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-
 <section  class="homepage-slider" id="home-slider">
 				<div class="flexslider">
 				<ul class="slides">
@@ -41,7 +40,6 @@
 								</h4>
 								<div id="myCarousel" class="myCarousel carousel slide">
 									<div class="carousel-inner">
-
 										<div class="active item">
 											<ul class="thumbnails">	
 											@foreach($newproduct_0 as $np )			
@@ -51,12 +49,11 @@
 														<p><a href="{{route('thongtinsanpham',$np->id)}}"><img src="themes/images/sport/{{$np->image}}" alt=""/></a></p>
 														<a href="{{route('thongtinsanpham',$np->id)}}" class="title">{{$np->name}}</a><br/>
 														<a href="" class="category"></a>
-														<p class="price">{{number_format($np->unit_price)}} VNĐ</p>
-														<p class="price">{{number_format($np->promotion_price)}} VNĐ</p>
+														<p class="flash-del">{{number_format($np->unit_price)}} VNĐ</p>
+														<p class="flash-sale">{{number_format($np->promotion_price)}} VNĐ</p>
 													</div>
 												</li>	
-											@endforeach
-												
+											@endforeach	
 											</ul>
 										</div>
 

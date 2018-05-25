@@ -11,7 +11,7 @@
 							<li><a href="">Tài Khoản</a></li>
 							<li><a href="{{route('giohang')}}">Giỏ Hàng: {{$count}}</a></li>
 							<li><a href="{{route('thanhtoan')}}">Thanh Toán</a></li>					
-							<li><a href="{{route('dangky')}}">Đăng Nhập</a></li>		
+							<li><a href="{{route('signin')}}">Đăng Nhập / Đăng Ký</a></li>		
 						</ul>
 					</div>
 				</div>
