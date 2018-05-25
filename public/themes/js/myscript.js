@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	$(".Update").click(function()
+	$(".Update").bind('input',function()
 		{
 			var rowid=$(this).attr('id');
 			var qty=$(this).parent().parent().find(".qty").val();
