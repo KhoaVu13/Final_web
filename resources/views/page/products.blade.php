@@ -6,12 +6,15 @@
 			</section>
 			<section class="main-content">
 				<div class="row">						
-					<div class="span9">								
+					<div class="span9">						
 						<ul class="thumbnails listing-products">
 							@foreach($sp_theoloai as $sp)
 							<li class="span3" style="width: 200px;">
 								<div class="product-box">
-									<span class="sale_tag"></span>												
+									<span class="sale_tag"></span>	
+									@if($sp->promotion_price!=0)
+										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+									@endif												
 									<a href="{{route('thongtinsanpham',$sp->id)}}"><img alt="" src="themes/images/sport/{{$sp->image}}"></a><br/>
 									<a href="{{route('thongtinsanpham',$sp->id)}}" class="title">{{$sp->name}}</a><br/>
 									<a href="{{route('thongtinsanpham',$sp->id)}}" class="category"></a>
@@ -31,6 +34,7 @@
 								{{$sp_theoloai->links()}}
 						</div>
 					</div>
+
 					<div class="span3 col">
 						<div class="block">	
 							<ul class="nav nav-list">

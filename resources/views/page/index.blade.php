@@ -46,7 +46,12 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="{{route('thongtinsanpham',$np->id)}}"><img src="themes/images/sport/{{$np->image}}" alt=""/></a></p>
+														<p>
+															@if($np->promotion_price!=0)
+																<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+															@endif
+															<a href="{{route('thongtinsanpham',$np->id)}}"><img src="themes/images/sport/{{$np->image}}" alt=""/></a>
+														</p>
 														<a href="{{route('thongtinsanpham',$np->id)}}" class="title">{{$np->name}}</a><br/>
 														<a href="" class="category"></a>
 														@if($np->promotion_price!=0)
@@ -66,7 +71,12 @@
 												@foreach($newproduct_1 as $np1)
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="{{route('thongtinsanpham',$np1->id)}}"><img src="themes/images/sport/{{$np1->image}}" alt="" /></a></p>
+														<p>
+															@if($np1->promotion_price!=0)
+																<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+															@endif
+															<a href="{{route('thongtinsanpham',$np1->id)}}"><img src="themes/images/sport/{{$np1->image}}" alt="" /></a>
+														</p>
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="title">{{$np1->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="category"></a>
 														@if($np1->promotion_price!=0)
@@ -87,7 +97,12 @@
 												@foreach($newproduct_2 as $np2)
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="{{route('thongtinsanpham',$np2->id)}}"><img src="themes/images/sport/{{$np2->image}}" alt="" /></a></p>
+														<p>
+															@if($np2->promotion_price!=0)
+																<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+															@endif
+															<a href="{{route('thongtinsanpham',$np2->id)}}"><img src="themes/images/sport/{{$np2->image}}" alt="" /></a>
+														</p>
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="title">{{$np2->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="category"></a>
 														@if($np2->promotion_price!=0)
