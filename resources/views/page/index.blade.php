@@ -49,8 +49,12 @@
 														<p><a href="{{route('thongtinsanpham',$np->id)}}"><img src="themes/images/sport/{{$np->image}}" alt=""/></a></p>
 														<a href="{{route('thongtinsanpham',$np->id)}}" class="title">{{$np->name}}</a><br/>
 														<a href="" class="category"></a>
+														@if($np->promotion_price!=0)
 														<p class="flash-del">{{number_format($np->unit_price)}} VNĐ</p>
 														<p class="flash-sale">{{number_format($np->promotion_price)}} VNĐ</p>
+														@else
+														<p class="flash-sale">{{number_format($np->unit_price)}} VNĐ</p>
+														@endif
 													</div>
 												</li>	
 											@endforeach	
@@ -65,8 +69,12 @@
 														<p><a href="{{route('thongtinsanpham',$np1->id)}}"><img src="themes/images/sport/{{$np1->image}}" alt="" /></a></p>
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="title">{{$np1->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="category"></a>
-														<p class="price" >{{number_format($np1->unit_price)}} VNĐ</p>
-														<p class="price" >{{number_format($np1->promotion_price)}} VNĐ</p>
+														@if($np1->promotion_price!=0)
+														<p class="flash-del">{{number_format($np1->unit_price)}} VNĐ</p>
+														<p class="flash-sale">{{number_format($np1->promotion_price)}} VNĐ</p>
+														@else
+														<p class="flash-sale">{{number_format($np1->unit_price)}} VNĐ</p>
+														@endif
 													</div>
 												</li>		
 												@endforeach																							
@@ -82,8 +90,12 @@
 														<p><a href="{{route('thongtinsanpham',$np2->id)}}"><img src="themes/images/sport/{{$np2->image}}" alt="" /></a></p>
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="title">{{$np2->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="category"></a>
-														<p class="price" >{{number_format($np2->unit_price)}} VNĐ</p>
-														<p class="price" >{{number_format($np2->promotion_price)}} VNĐ</p>
+														@if($np2->promotion_price!=0)
+														<p class="flash-del">{{number_format($np2->unit_price)}} VNĐ</p>
+														<p class="flash-sale">{{number_format($np2->promotion_price)}} VNĐ</p>
+														@else
+														<p class="flash-sale">{{number_format($np2->unit_price)}} VNĐ</p>
+														@endif
 													</div>
 												</li>		
 												@endforeach																							
