@@ -6,21 +6,29 @@
 			</section>			
 			<section class="main-content">	
 				<div class="row">
-<div class="span5">					
+					<div class="span5">					
 						<h4 class="title"><span class="text"><strong>Đăng</strong> Nhập</span></h4>
-						<form action="#" method="post">
-							<input type="hidden" name="next" value="/">
+						<form action="{{route('login')}}" method="post">
+							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<fieldset>
+								<div class="control-group">
+									<label class="control-label"></label>
+									@if(Session::has('flag'))
+									<div class="controls">
+										{{Session::get('message')}}
+									</div>
+									@endif
+								</div>
 								<div class="control-group">
 									<label class="control-label">Emails</label>
 									<div class="controls">
-										<input type="text" placeholder="Nhập Emails" id="username" class="input-xlarge">
+										<input type="email" placeholder="Nhập Emails" name="email" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">Mật Khẩu</label>
 									<div class="controls">
-										<input type="password" placeholder="Nhập Mật Khẩu" id="password" class="input-xlarge">
+										<input type="password" placeholder="Nhập Mật Khẩu" name="password" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">
