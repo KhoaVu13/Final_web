@@ -49,9 +49,10 @@ Route::get('xoa_san_pham/{id}',['as'=>'xoasanpham','uses'=>'PageController@xoasa
 Route::get('cap_nhat_san_pham/{id}/{qty}',['as'=>'capnhatsanpham','uses'=>'PageController@capnhatsanpham']);
 Route::get('dang_ky',[
 	'as'=>'signin',
-	'uses'=>'PageController@getSignin'
+	'uses'=>'RegisterController@getSignin'
 ]);
 Route::post('dang_ky',[
 	'as'=>'signin',
-	'uses'=>'PageController@postSignin'
+	'uses'=>'RegisterController@postSignin'
 ]);
+Route::get('dang_nhap',['as'=>'login','uses'=>'LoginController@getLogin']);
