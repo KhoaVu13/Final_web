@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Slide;
 use App\Products;
 use App\ProductsType;
+use App\Bill;
 use Cart;
 Use Session;
 use Request;
@@ -23,9 +24,6 @@ class PageController extends Controller
         $count = count($newproduct_0)+count($newproduct_1)+count($newproduct_2);
     	return view('page.index',compact('slide','slide2','newproduct_0','newproduct_1','newproduct_2','count'));
 }
-     public function getCheckOut(){
-    	return view('page.checkout');
-    }
     public function getContact(){
     	return view('page.contact');
     }

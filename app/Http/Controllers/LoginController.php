@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Hash;
 use App\user;
 use Auth;
-
+use Cart;
 class LoginController extends Controller
 {
 	public function getLogin()
@@ -36,7 +36,7 @@ class LoginController extends Controller
         // if($user){
             if(Auth::attempt($credentials)){
 
-            // return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
+            	//return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
             	return redirect()->route('trangchu');
             }
             else{
@@ -48,6 +48,7 @@ class LoginController extends Controller
         // }
         public function postLogout()
         {
+            Cart::destroy();
         	Auth::logout();
         	return redirect()->route('trangchu');
     	}

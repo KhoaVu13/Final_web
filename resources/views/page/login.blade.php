@@ -14,7 +14,7 @@
 								<div class="control-group">
 									<label class="control-label"></label>
 									@if(Session::has('flag'))
-									<div class="controls">
+									<div style="color: red" class="controls">
 										{{Session::get('message')}}
 									</div>
 									@endif
@@ -22,7 +22,7 @@
 								<div class="control-group">
 									<label class="control-label">Emails</label>
 									<div class="controls">
-										<input type="email" placeholder="Nhập Emails" name="email" class="input-xlarge">
+										<input type="text" placeholder="Nhập Emails" name="email" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">

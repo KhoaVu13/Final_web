@@ -10,9 +10,8 @@
 						<ul class="user-menu">				
 							<li><a href="">Tài Khoản</a></li>
 							<li><a href="{{route('giohang')}}">Giỏ Hàng: {{$count}}</a></li>
-							<li><a href="{{route('thanhtoan')}}">Thanh Toán</a></li>
 							@if(Auth::check())					
-							<li><a >Chào bạn {{Auth::user()->full_name}}</a></li>
+							<li><a >Chào bạn: {{Auth::user()->full_name}}</a></li>
 							<li><a href="{{route('logout')}}">Đăng xuất</a></li>
 							@else
 							<li><a href="{{route('signin')}}">Đăng Ký</a></li>

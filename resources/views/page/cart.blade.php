@@ -66,13 +66,18 @@
 						<p class="cart-total right">
 							<strong>Tổng tiền</strong>: {{number_format($total)}} đ<br>
 							<strong>Giảm Giá</strong><br>
-							<strong>VAT</strong>: 20%<br>
-							<strong>Tổng hóa đơn</strong>: {{number_format($total*0.9)}} đ<br>
+							<strong>VAT</strong>: 10%<br>
+							<strong>Tổng hóa đơn</strong>: {{number_format($total*1.1)}} đ<br>
 						</p>
 						<hr/>
 						<p class="buttons center">				
-							<button class="btn" type="button">Tiếp tục</button>
-							<button class="btn btn-inverse" type="submit" id="checkout">Thanh Toán</button>
+							<!-- <button class="btn" type="button">Tiếp tục</button>
+							<button class="btn btn-inverse" type="submit" id="checkout">Thanh Toán</button> -->
+							@if(Auth::check())
+							<a style="font-weight: bold;" href="{{route('thanhtoan')}}">Thanh Toán</a>
+							@else
+							<a style="font-weight: bold;" href="{{route('login')}}">Thanh Toán</a>
+							@endif
 						</p>					
 					</div>
 					<div class="span3 col">

@@ -1,13 +1,13 @@
 @extends('master')
 @section('content')		
 			<section class="header_text sub">
-			<img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
-				<h4><span>Check Out</span></h4>
+			<!-- <img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" > -->
+				<h4><span>Thanh Toán</span></h4>
 			</section>	
 			<section class="main-content">
 				<div class="row">
 					<div class="span12">
-						<div class="accordion" id="accordion2">
+						<!-- <div class="accordion" id="accordion2">
 							<div class="accordion-group">
 								<div class="accordion-heading">
 									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Checkout Options</a>
@@ -183,7 +183,31 @@
 									</div>
 								</div>
 							</div>
-						</div>				
+						</div>	 -->	
+						<form action="" method="post">
+							<input type="hidden" name="_token" value="{{csrf_token()}}">
+							<div>Thông Tin Đơn Hàng</div>
+							<div>--Tên Khách Hàng: {{Auth::user()->full_name}}</div>
+							<div>--Địa Chỉ Giao Hàng: {{Auth::user()->address}}</div>
+							<div>--Ngày Đặt Hàng: {{date('Y-m-d')}}</div>
+							<div>--Hàng Trong Giỏ: </div>
+							<div>
+								@foreach($content as $c)
+								<img style="width: 30px ; height: 30px" src="themes/images/sport/{{$c->options->img}}">
+								<div>{{$c->name}}: {{$c->qty}} cái</div>
+								<div>Giá: {{number_format($c->price*$c->qty)}} đ / {{$c->qty}} cái</div>
+								@endforeach
+							</div>
+							<div>----------Tổng Hóa Đơn: {{number_format($total)}} đ----------</div>
+							<div><input type="radio" name="payment_method" value="COD"> Thanh Toán Khi Nhận Hàng</div>
+							<div><input type="radio" name="payment_method" value="OP"> Internet Banking / Visa</div>
+							<div><label for="notes">Ghi Chú</label><textarea id="notes" name="notes"></textarea></div>
+							<p class="buttons center"><button type="submit">Đặt Hàng</button></p>
+							<div style="color: red"><strong>@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</strong></div>
+						</form>
+						
+
+
 					</div>
 				</div>
 			</section>			
