@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+}
+class Users extends Model
+{
+   protected $table = "users";
+     public function user_bills()
+    {
+        return $this-> hasMany('App\Bills','id_user','id');
+    }
 }

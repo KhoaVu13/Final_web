@@ -23,7 +23,7 @@ class CheckOutController extends Controller
         $total = Cart::total();
 
         $bill = new Bills;
-        $bill->id_customer = Auth::user()->id;
+        $bill->id_user = Auth::user()->id;
         $bill->date_order = date('Y-m-d');
         $bill->total = $total;
         $bill->payment = $req->payment_method;
@@ -42,5 +42,5 @@ class CheckOutController extends Controller
         }
         Cart::destroy();
         return redirect()->back()->with('thongbao','Đặt hàng thành công');
-    }
+    }  
 }

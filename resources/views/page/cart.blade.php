@@ -74,9 +74,11 @@
 							<!-- <button class="btn" type="button">Tiếp tục</button>
 							<button class="btn btn-inverse" type="submit" id="checkout">Thanh Toán</button> -->
 							@if(Auth::check())
-							<a style="font-weight: bold;" href="{{route('thanhtoan')}}">Thanh Toán</a>
+							<a style="font-weight: bold;" href="{{route('thanhtoancus')}}">Đặt Hàng Với Địa Chỉ Khác</a>
+							<a>&nbsp;</a><a>&nbsp;</a><a>&nbsp;</a>
+							<a style="font-weight: bold;" href="{{route('thanhtoan')}}">Đặt Hàng Với Địa Chỉ Cá Nhân</a>
 							@else
-							<a style="font-weight: bold;" href="{{route('login')}}">Thanh Toán</a>
+							<a style="font-weight: bold;" href="{{route('login')}}">Bạn Phải Đăng Nhập Để Đặt hàng</a>
 							@endif
 						</p>					
 					</div>

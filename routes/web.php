@@ -44,3 +44,5 @@ Route::get('dang_xuat',['as'=>'logout','uses'=>'LoginController@postLogout']);
 Route::get('checkout',['as' =>'thanhtoan','uses'=>'CheckOutController@getCheckOut']);
 Route::post('checkout',['as' =>'thanhtoan','uses'=>'CheckOutController@postCheckOut']);
 
+Route::get('checkout_cus',['as' =>'thanhtoancus','uses'=>'CheckOutControllerCus@getCheckOutCus']);
+Route::post('checkout_cus',['as' =>'thanhtoancus','uses'=>'CheckOutControllerCus@postCheckOutCus']);

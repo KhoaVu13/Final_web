@@ -34,7 +34,8 @@
 								<div class="control-group">
 									<input tabindex="3" class="btn btn-inverse large" type="submit" value="Đăng Nhập">
 									<hr>
-									<p class="reset"><a tabindex="4" href="#" title="Recover your username or password">Quên Mật Khẩu</a></p>
+									<p class="reset"><a tabindex="4" href="{{route('signin')}}" title="">Tạo Tài Khoản</a></p>
+									<p class="reset"><a tabindex="4" href="#" title="">Quên Mật Khẩu</a></p>
 								</div>
 							</fieldset>
 						</form>				

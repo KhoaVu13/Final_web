@@ -29,7 +29,7 @@
 								<address>
 									<strong>Xuất xứ : </strong> <span>{{$sanpham->NSX}}</span><br>
 									<strong>Mã sản phẩm : </strong> <span>{{$sanpham->id}}</span><br>
-									<strong>Điểm tích lũy : </strong> <span>0</span><br>
+									<!-- <strong>Điểm tích lũy : </strong> <span>0</span><br> -->
 									<strong>Tình trạng : </strong> 
 									<span class="qty">
 										@if($sanpham->qty>0)
@@ -50,16 +50,19 @@
 							</div>
 							<div class="span5">
 								<form class="form-inline">
-									<label class="checkbox">
+									<!-- <label class="checkbox">
 										<input type="checkbox" value=""> Đen
 									</label>
 									<br/>
 									<label class="checkbox">
 									  <input type="checkbox" value=""> Xanh lá cây
-									</label>
+									</label> -->
 									<p>&nbsp;</p>
-									<label>Số lượng:</label>
-									<input type="text" class="span1" placeholder="1">
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<label>Còn </label>
+									<label>{{$sanpham->qty}} sản phẩm </label>
 									@if($sanpham->qty>0)
 									<a href="{{route('muahang',$sanpham->id)}}"  class="btn btn-inverse" type="submit">Thêm vào giỏ</a>
 									@else
