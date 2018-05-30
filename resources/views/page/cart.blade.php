@@ -64,10 +64,10 @@
 						<a><button class="btn" type="button">Xác Nhận</button></a>
 						<hr>
 						<p class="cart-total right">
-							<strong>Tổng tiền</strong>: {{number_format($total)}} đ<br>
-							<strong>Giảm Giá</strong><br>
+							<strong>Tổng Hóa Đơn</strong>: {{number_format($total)}} đ<br>
+							<!-- <strong>Giảm Giá: </strong><br>
 							<strong>VAT</strong>: 10%<br>
-							<strong>Tổng hóa đơn</strong>: {{number_format($total*1.1)}} đ<br>
+							<strong>Tổng hóa đơn</strong>: {{number_format($total*1.1)}} đ<br> -->
 						</p>
 						<hr/>
 						<p class="buttons center">				

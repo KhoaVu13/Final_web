@@ -11,11 +11,11 @@
 						@foreach($slide2 as $sl2)
 						<li>
 							<img src="themes/images/carousel/{{$sl2->image}}" alt="" />
-							<div class="intro">
+							<!-- <div class="intro">
 								<h1>Khuyến Mãi Hè</h1>
 								<p><span>Lên Đến 50%</span></p>
 								<p><span>Nhiều Sản Phẩm Chất Lượng</span></p>
-							</div>
+							</div> -->
 						</li>
 						@endforeach
 					</ul>
@@ -55,10 +55,10 @@
 														<a href="{{route('thongtinsanpham',$np->id)}}" class="title">{{$np->name}}</a><br/>
 														<a href="" class="category"></a>
 														@if($np->promotion_price!=0)
-														<p class="flash-del">{{number_format($np->unit_price)}} VNĐ</p>
-														<p class="flash-sale">{{number_format($np->promotion_price)}} VNĐ</p>
+														<p class="flash-del">{{number_format($np->unit_price)}} ₫</p>
+														<p class="flash-sale">{{number_format($np->promotion_price)}} ₫</p>
 														@else
-														<p class="flash-sale">{{number_format($np->unit_price)}} VNĐ</p>
+														<p class="flash-sale">{{number_format($np->unit_price)}} ₫</p>
 														@endif
 													</div>
 												</li>	
@@ -80,10 +80,10 @@
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="title">{{$np1->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np1->id)}}" class="category"></a>
 														@if($np1->promotion_price!=0)
-														<p class="flash-del">{{number_format($np1->unit_price)}} VNĐ</p>
-														<p class="flash-sale">{{number_format($np1->promotion_price)}} VNĐ</p>
+														<p class="flash-del">{{number_format($np1->unit_price)}} ₫</p>
+														<p class="flash-sale">{{number_format($np1->promotion_price)}} ₫</p>
 														@else
-														<p class="flash-sale">{{number_format($np1->unit_price)}} VNĐ</p>
+														<p class="flash-sale">{{number_format($np1->unit_price)}} ₫</p>
 														@endif
 													</div>
 												</li>		
@@ -106,10 +106,10 @@
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="title">{{$np2->name}}</a><br/>
 														<a href="{{route('thongtinsanpham',$np2->id)}}" class="category"></a>
 														@if($np2->promotion_price!=0)
-														<p class="flash-del">{{number_format($np2->unit_price)}} VNĐ</p>
-														<p class="flash-sale">{{number_format($np2->promotion_price)}} VNĐ</p>
+														<p class="flash-del">{{number_format($np2->unit_price)}} ₫</p>
+														<p class="flash-sale">{{number_format($np2->promotion_price)}} ₫</p>
 														@else
-														<p class="flash-sale">{{number_format($np2->unit_price)}} VNĐ</p>
+														<p class="flash-sale">{{number_format($np2->unit_price)}} ₫</p>
 														@endif
 													</div>
 												</li>		

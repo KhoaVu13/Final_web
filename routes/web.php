@@ -46,3 +46,7 @@ Route::post('checkout',['as' =>'thanhtoan','uses'=>'CheckOutController@postCheck
 
 Route::get('checkout_cus',['as' =>'thanhtoancus','uses'=>'CheckOutControllerCus@getCheckOutCus']);
 Route::post('checkout_cus',['as' =>'thanhtoancus','uses'=>'CheckOutControllerCus@postCheckOutCus']);
+
+Route::get('account',['as' =>'taikhoan','uses'=>'AccountController@getAccount']);
+Route::get('history/{id}',['as'=>'lichsu','uses'=>'AccountController@getHistory']);
+

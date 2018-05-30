@@ -8,6 +8,8 @@ use App\Slide;
 use App\Products;
 use App\ProductsType;
 use App\Bill;
+use App\ProductsDetail;
+use Illuminate\Support\Facades\DB;
 use Cart;
 Use Session;
 use Request;
@@ -20,15 +22,18 @@ class PageController extends Controller
         //$newproduct = Products::where('new',1)->get(); //paginate(số lượng)=get()
         $newproduct_0 = Products::find([8,9,10,11]);
         $newproduct_1 = Products::find([12,13,14,15]);
-        $newproduct_2 = Products::find([16]);
+        $newproduct_2 = Products::find([16,17]);
         $count = count($newproduct_0)+count($newproduct_1)+count($newproduct_2);
     	return view('page.index',compact('slide','slide2','newproduct_0','newproduct_1','newproduct_2','count'));
 }
     public function getContact(){
     	return view('page.contact');
     }
-     public function getPD($id){
+     public function getPD($id){ 
         $sanpham = Products::where('id',$id)->first();
+        // $ctsp1 =  DB::select('select * from products_detail where id_product= :id and size = :s',['id'=>$id , 's'=>'L']);
+        // $ctsp2 =  DB::select('select * from products_detail where id_product= :id and size = :s',['id'=>$id , 's'=>'M']);
+        // $ctsp3 =  DB::select('select * from products_detail where id_product= :id and size = :s',['id'=>$id , 's'=>'S']);
     	return view('page.product_detail',compact('sanpham'));
     }
     public function getProducts($type){
@@ -39,7 +44,8 @@ class PageController extends Controller
     public function getRegister(){
     	return view('page.register');
     }
-    public function muahang($id){
+    public function muahang($id)
+    {
     $products_buy = Products::where('id',$id)->first();
     if ($products_buy->promotion_price!=0) {
        Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->promotion_price,'discount'=>0.00,'options'=>array('img'=>$products_buy->image)));

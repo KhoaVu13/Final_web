@@ -19,10 +19,10 @@
 									<a href="{{route('thongtinsanpham',$sp->id)}}" class="title">{{$sp->name}}</a><br/>
 									<a href="{{route('thongtinsanpham',$sp->id)}}" class="category"></a>
 									@if(($sp->promotion_price)==0)
-									<p class="flash-sale">{{number_format($sp->unit_price)}} VNĐ</p>
+									<p class="flash-sale">{{number_format($sp->unit_price)}} ₫</p>
 									@else
-									<p class="flash-del">{{number_format($sp->unit_price)}} VNĐ</p>
-									<p class="flash-sale">{{number_format($sp->promotion_price)}} VNĐ</p>
+									<p class="flash-del">{{number_format($sp->unit_price)}} ₫</p>
+									<p class="flash-sale">{{number_format($sp->promotion_price)}} ₫</p>
 									@endif
 								</div>
 							</li>       

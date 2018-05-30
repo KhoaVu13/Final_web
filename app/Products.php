@@ -14,5 +14,8 @@ class Products extends Model
     {
     	return $this->hasMany('App\BillDetail','id_product','id');
     }
+    public function product_productdetail(){
+    	return $this->belongsTo('App\ProductsDetail','id','id_product') ;
+    }
     
 }

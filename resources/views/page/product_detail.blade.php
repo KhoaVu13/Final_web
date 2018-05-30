@@ -31,14 +31,13 @@
 									<strong>Mã sản phẩm : </strong> <span>{{$sanpham->id}}</span><br>
 									<!-- <strong>Điểm tích lũy : </strong> <span>0</span><br> -->
 									<strong>Tình trạng : </strong> 
-									<span class="qty">
-										@if($sanpham->qty>0)
-										<b style="color:green;">Còn hàng</b>
-										@else
-										<b style="color:red;">Hết hàng</b>
-										@endif
-									</span><br>					
-
+									<span>
+									@if($sanpham->qty>0)
+									<a style="color:green; ">Còn {{$sanpham->qty}} sản phẩm</a>
+									@else
+									<a style="color: red;">Hết hàng</a>
+									@endif
+									</span><br>		
 								</address>									
 								<h4><strong>
 									@if($sanpham->promotion_price!=0)
@@ -50,23 +49,10 @@
 							</div>
 							<div class="span5">
 								<form class="form-inline">
-									<!-- <label class="checkbox">
-										<input type="checkbox" value=""> Đen
-									</label>
-									<br/>
-									<label class="checkbox">
-									  <input type="checkbox" value=""> Xanh lá cây
-									</label> -->
-									<p>&nbsp;</p>
-									<p>&nbsp;</p>
-									<p>&nbsp;</p>
-									<p>&nbsp;</p>
-									<label>Còn </label>
-									<label>{{$sanpham->qty}} sản phẩm </label>
 									@if($sanpham->qty>0)
 									<a href="{{route('muahang',$sanpham->id)}}"  class="btn btn-inverse" type="submit">Thêm vào giỏ</a>
 									@else
-									<a style="red"><strong>Sản Phẩm Hết Hàng</strong></a>
+									<a style="color: red;">Sản Phẩm Hết Hàng</a>
 									@endif
 								</form>
 							</div>							
@@ -74,8 +60,8 @@
 						<div class="row">
 							<div class="span9">
 								<ul class="nav nav-tabs" id="myTab">
-									<li class="active"><a href="#home">Description</a></li>
-									<li class=""><a href="#profile">Additional Information</a></li>
+									<li class="active"><a href="">Description</a></li>
+									<li class=""><a href="">Additional Information</a></li>
 								</ul>							 
 								<div class="tab-content">
 									<div class="tab-pane active" id="home">{{$sanpham->description}}</div>

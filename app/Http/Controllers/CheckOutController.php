@@ -28,6 +28,7 @@ class CheckOutController extends Controller
         $bill->total = $total;
         $bill->payment = $req->payment_method;
         $bill->note = $req->notes;
+        $bill->status='DXL';
         $bill->save();
 
 
