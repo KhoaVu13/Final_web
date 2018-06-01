@@ -16,6 +16,8 @@
 				<div>Trạng thái đơn hàng: Đang xử lý ----- <strong>Đang vận chuyển</strong> </div><br>
 				@elseif($a->status == 'DTT')
 				<div>Trạng thái đơn hàng: Đang xử lý ----- Đang vận chuyển ----- <strong>Đã thanh toán</strong></div><br>
+				@elseif($a->status == 'HUY')
+				<div>Trạng thái đơn hàng: Đang xử lý ----- Đang vận chuyển ----- Đã thanh toán ----- <strong>Hủy</strong></div><br>
 				@endif
 				@endforeach
 			</section>			
