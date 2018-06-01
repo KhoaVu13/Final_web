@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\user;
 use App\Bills;
 use App\BillDetail;
+use App\Products;
 use Cart;
 use Auth;
 
@@ -44,13 +45,17 @@ class CheckOutController extends Controller
 
         foreach ($content as $c) 
         {
-            $bill_detail = new BillDetail;
+            $bill_detail = new BillDetail; 
             $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product = $c->id;
             $bill_detail->quantity = $c->qty;
             $bill_detail->unit_price = $c->price;
             $bill_detail->save();
+            $products = Products::find($c->id);
+            $products->qty = $products->qty - $c->qty;
+            $products->save();
         }
+       
         Cart::destroy();
         return redirect()->back()->with('thongbao','Đặt hàng thành công');
     }  
