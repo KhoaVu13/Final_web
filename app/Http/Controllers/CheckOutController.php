@@ -15,17 +15,27 @@ class CheckOutController extends Controller
     {
         $content = Cart::content();
         $total = Cart::total();
-        return view('page.checkout',compact('content','total'));
+        $subtotal = Cart::subtotal();
+        return view('page.checkout',compact('content','subtotal'));
     }
     public function postCheckOut(Request $req)
     {
+         $this->validate($req,
+            [
+                'payment_method'=>'required',
+            ],
+            [
+                'payment_method.required'=>'Vui lòng chọn hình thức thanh toán',
+            ]);
+
         $content = Cart::content();
         $total = Cart::total();
+        $subtotal = Cart::subtotal();
 
         $bill = new Bills;
         $bill->id_user = Auth::user()->id;
         $bill->date_order = date('Y-m-d');
-        $bill->total = $total;
+        $bill->total = $subtotal;
         $bill->payment = $req->payment_method;
         $bill->note = $req->notes;
         $bill->status='DXL';

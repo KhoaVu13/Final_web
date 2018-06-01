@@ -22,7 +22,7 @@
 				</div>			
 			</section>
 			<section class="header_text">
-				<b>
+				<b style="color: blue;">
 				4 Musketeers Shop
 				<br/><u>Tìm thấy {{$count}} sản phẩm mới</u>
 				</b>

@@ -50,3 +50,5 @@ Route::post('checkout_cus',['as' =>'thanhtoancus','uses'=>'CheckOutControllerCus
 Route::get('account',['as' =>'taikhoan','uses'=>'AccountController@getAccount']);
 Route::get('history/{id}',['as'=>'lichsu','uses'=>'AccountController@getHistory']);
 
+Route::get('search',['as'=>'search','uses'=>'SearchController@getSearch']);
+

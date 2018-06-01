@@ -184,9 +184,15 @@
 								</div>
 							</div>
 						</div>	 -->	
+						@if(Session::has('thongbao')){{Session::get('thongbao')}}
+						@else
 						<form action="{{route('thanhtoan')}}" method="post">
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
-							<div style="color: red"><strong>@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</strong></div>
+							<div style="color: red"><strong>
+													@foreach($errors->all() as $err)
+													{{$err}}
+													@endforeach	
+													</strong></div>
 							<div>Thông Tin Đơn Hàng</div>
 							<div>--Tên Khách Hàng: {{Auth::user()->full_name}}</div>
 							<div>--Địa Chỉ Giao Hàng: {{Auth::user()->address}}</div>
@@ -199,13 +205,15 @@
 								<div>Giá: {{number_format($c->price*$c->qty)}} đ / {{$c->qty}} cái</div>
 								@endforeach
 							</div>
-							<div>----------Tổng Hóa Đơn: {{number_format($total)}} đ----------</div>
+							<div>----------Tổng Hóa Đơn: {{number_format($subtotal)}} đ----------</div>
 							<div><input type="radio" name="payment_method" value="COD"> Thanh Toán Khi Nhận Hàng</div>
 							<div><input type="radio" name="payment_method" value="OP"> Internet Banking / Visa</div>
 							<div><label for="notes">Ghi Chú</label><textarea id="notes" name="notes"></textarea></div>
 							<p class="buttons center"><button type="submit">Bạn Muốn Giao Hàng Tới Địa Chỉ Này</button></p>
+							<p class="buttons center"><a href="{{route('taikhoan')}}">Lịch sử mua hàng</a></p>
 						</form>
 					</div>
+						@endif
 				</div>
 			</section>			
 @endsection			

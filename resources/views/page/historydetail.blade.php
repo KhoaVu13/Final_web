@@ -5,14 +5,20 @@
 			</section>	
 			<section class="main-content">
 				<div><strong style="color: red;">Đơn hàng của bạn</strong></div><br>
-				@foreach($history as $his)
-				@foreach($pd as $p)
-				<div><a>Mã Đơn Hàng: {{$his->id_bill}}</a></div>
-				<div>{{$his->id_product}}: {{$p->name}}</div>
+				@foreach($history as $history)
+				<div><a>Mã sản phẩm: {{$history->id_product}}</a></div>
+				<div>Tên sản phẩm: {{$history->name}}</div>
+				@if($history->promotion_price!=0)
+				<div>Đơn giá: {{number_format($history->promotion_price)}} ₫</div>
+				@else
+				<div>Đơn giá: {{number_format($history->unit_price)}} ₫</div>
+				@endif
+				<div>Số lượng: {{$history->quantity}}</div>
+				@if($history->promotion_price!=0)
+				<div>Thành tiền sản phẩm: {{number_format($history->promotion_price*$history->quantity)}} ₫</div><br>
+				@else
+				<div>Thành tiền sản phẩm: {{number_format($history->unit_price*$history->quantity)}} ₫</div><br>
+				@endif
 				@endforeach
-				@endforeach
-				<!-- @foreach($history as $his)
-				<div>{{$his->id_product}}</div>
-				@endforeach -->
 			</section>			
 @endsection			

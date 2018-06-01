@@ -1,17 +1,23 @@
 <div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
-					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="Tìm kiếm sản phẩm">
+					<form method="get" action="{{route('search')}}">
+						<input type="text" name="key" Placeholder="Tìm kiếm sản phẩm">
 					</form>
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
-						<ul class="user-menu">				
+						<ul class="user-menu">			
+							<li><a href="{{route('trangchu')}}">Trang Chủ</a></li>
 							<li><a href="{{route('giohang')}}">Giỏ Hàng: {{$count}}</a></li>
-							@if(Auth::check())					
-							<li><a href="{{route('taikhoan')}}">Chào bạn: {{Auth::user()->full_name}}</a></li>
+							@if(Auth::check())
+							@if(Auth::user()->member==null)					
+							<li><a href="{{route('taikhoan')}}">Chào bạn: {{Auth::user()->full_name}}--(Thường)</a></li>
 							<li><a href="{{route('logout')}}">Đăng xuất</a></li>
+							@else
+							<li><a href="{{route('taikhoan')}}">Chào bạn: {{Auth::user()->full_name}}--({{Auth::user()->member}})</a></li>
+							<li><a href="{{route('logout')}}">Đăng xuất</a></li>
+							@endif
 							@else
 							<li><a href="{{route('signin')}}">Đăng Ký</a></li>
 							<li><a href="{{route('login')}}">Đăng Nhập</a></li>

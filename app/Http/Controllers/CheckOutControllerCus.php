@@ -38,6 +38,7 @@ class CheckOutControllerCus extends Controller
 
         $content = Cart::content();
         $total = Cart::total();
+        $subtotal = Cart::subtotal();
 
         $customer = new Customer;
         $customer->name = $req->name;
@@ -51,7 +52,7 @@ class CheckOutControllerCus extends Controller
         $bill = new Bills;
         $bill->id_customer = $customer->id;
         $bill->date_order = date('Y-m-d');
-        $bill->total = $total;
+        $bill->total = $subtotal;
         $bill->payment = $req->payment_method;
         $bill->note = $req->notes;
         $bill->save();

@@ -31,16 +31,12 @@ class PageController extends Controller
     }
      public function getPD($id){ 
         $sanpham = Products::where('id',$id)->first();
-        // $ctsp1 =  DB::select('select * from products_detail where id_product= :id and size = :s',['id'=>$id , 's'=>'L']);
-        // $ctsp2 =  DB::select('select * from products_detail where id_product= :id and size = :s',['id'=>$id , 's'=>'M']);
-        // $ctsp3 =  DB::select('select * from products_detail where id_product= :id and size = :s',['id'=>$id , 's'=>'S']);
     	return view('page.product_detail',compact('sanpham'));
     }
     public function getProducts($type){
         $sp_theoloai=Products::where('id_type',$type)->paginate(4);
     	return view('page.products',compact('sp_theoloai'));
             }
-        //echo $sp_theoloai;}
     public function getRegister(){
     	return view('page.register');
     }
@@ -48,11 +44,11 @@ class PageController extends Controller
     {
     $products_buy = Products::where('id',$id)->first();
     if ($products_buy->promotion_price!=0) {
-       Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->promotion_price,'discount'=>0.00,'options'=>array('img'=>$products_buy->image)));
+       Cart::add(['id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->promotion_price,'options'=>['img'=>$products_buy->image]]);
     }
     else
-    {Cart::add(array('id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->unit_price,'discount'=>0.00,'options'=>array('img'=>$products_buy->image)));}
-    $content = Cart::content();
+    {Cart::add(['id'=>$id,'name'=>$products_buy->name,'qty'=>1,'price'=>$products_buy->unit_price,'options'=>['img'=>$products_buy->image]]);}
+    //$content = Cart::content();
        return redirect()->route('giohang');
     }
 
@@ -60,8 +56,10 @@ class PageController extends Controller
     {
         $content = Cart::content();
         $total = Cart::total();
-         
-        return view('page.cart',compact('content','total','count'));
+        $count = Cart::count();
+        $subtotal = Cart::subtotal();
+        return view('page.cart',compact('content','subtotal','count'));
+        //echo dd($subtotal);
     }
 
     public function xoasanpham($id)

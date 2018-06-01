@@ -29,14 +29,14 @@
 									<td><strong style="color: blue">{{$c->name}}</strong></td>
 
 									<td>
-										<input id="{{$c->rowid}}" class="qty Update" min="0" type="number" value="{{$c->qty}}">
+										<input id="{{$c->rowId}}" class="qty Update" min="1" type="number" value="{{$c->qty}}">
 									</td>
 									
 									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->
 									<td>{{number_format($c->price)}} đ</td>
 									<td>{{number_format($c->price*$c->qty)}} đ</td>
 									<!-- <td><a class="Update" id="{{$c->rowid}}"><img width="25px" height="25px" src="themes/images/icon/update.png"></a></td> -->
-									<td><a href="{{route('xoasanpham',['id'=>$c->rowid])}}"><img width="25px" height="25px" src="themes/images/icon/delete.png"></a></td>
+									<td><a href="{{route('xoasanpham',$c->rowId)}}"><img width="25px" height="25px" src="themes/images/icon/delete.png"></a></td>
 								</tr>		
 						@endforeach
 								<tr>
@@ -64,19 +64,20 @@
 						<a><button class="btn" type="button">Xác Nhận</button></a>
 						<hr>
 						<p class="cart-total right">
-							<strong>Tổng Hóa Đơn</strong>: {{number_format($total)}} đ<br>
-							<!-- <strong>Giảm Giá: </strong><br>
-							<strong>VAT</strong>: 10%<br>
-							<strong>Tổng hóa đơn</strong>: {{number_format($total*1.1)}} đ<br> -->
+							<strong>Tổng Hóa Đơn</strong>: {{number_format($subtotal)}} đ<br>
 						</p>
 						<hr/>
 						<p class="buttons center">				
 							<!-- <button class="btn" type="button">Tiếp tục</button>
 							<button class="btn btn-inverse" type="submit" id="checkout">Thanh Toán</button> -->
 							@if(Auth::check())
+							@if($count==0)
+							<div><a style="color: red;">Giỏ hàng trống</a></div>
+							@else
 							<a style="font-weight: bold;" href="{{route('thanhtoancus')}}">Đặt Hàng Với Địa Chỉ Khác</a>
 							<a>&nbsp;</a><a>&nbsp;</a><a>&nbsp;</a>
 							<a style="font-weight: bold;" href="{{route('thanhtoan')}}">Đặt Hàng Với Địa Chỉ Cá Nhân</a>
+							@endif
 							@else
 							<a style="font-weight: bold;" href="{{route('login')}}">Bạn Phải Đăng Nhập Để Đặt hàng</a>
 							@endif
