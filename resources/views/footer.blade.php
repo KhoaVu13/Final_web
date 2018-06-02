@@ -29,29 +29,24 @@
 			<ul class="nav">
 				<li>
 					<a href="{{route('trangchu')}}">
-						<span class="page">Homepage</span>
+						<span class="page">Trang Chủ</span>
 					</a>
 				</li>  
 				<li>
-					<a href="./about.html">
-						<span class="page">About Us</span>
+					<a href="">
+						<span class="page">Về Chúng Tôi</span>
 					</a>
 				</li>  
 				<li>
 					<a href="{{route('lienhe')}}">
-						<span class="page">Contac Us</span>
+						<span class="page">Liên Hệ</span>
 					</a>
 				</li> 
 				<li>
 					<a href="">
-						<span class="page">Your Cart</span>
+						<span class="page">Giỏ Hàng</span>
 					</a>
-				</li>  
-				<li>
-					<a href="{{route('dangky')}}">
-						<span class="page">Login</span>
-					</a>
-				</li>   				
+				</li>     				
 			</ul>					
 		</div>
 
