@@ -12,7 +12,7 @@
 								<h4>Thông tin đơn hàng </h4>
 								<a style="color: red;">
 									@if(Session::has('thongbao'))
-											{{Session::get('thongbao')}}<br>
+											{{Session::get('thongbao')}}
 									@endif 
 									@foreach($errors->all() as $err)
 											{{$err}}<br>

@@ -3,7 +3,7 @@
 
 			<section class="header_text sub">
 			<img class="pageBanner" src="themes/images/pageBanner_1.jpg" alt="New products" >
-				<h4><span>Shopping Cart</span></h4>
+				<h4><span>GIỎ HÀNG CỦA BẠN</span></h4>
 			</section>
 			<section class="main-content">				
 				<div class="row">
@@ -29,7 +29,7 @@
 									<td><strong style="color: blue">{{$c->name}}</strong></td>
 
 									<td>
-										<input id="{{$c->rowId}}" class="qty Update" type="number" value="{{$c->qty}}">
+										<input id="{{$c->rowId}}" class="qty Update" min="1" type="number" value="{{$c->qty}}">
 									</td>
 									
 									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->
@@ -50,7 +50,7 @@
 							</tbody>
 							</form>
 						</table>
-						<h4 style="color: blue">Mã Giảm Giá/ Quà Tặng</h4>
+						<h4 style="color: blue; font-family: time new romane"><img src="themes/images/uudai.png"> Mã Giảm Giá/ Quà Tặng</h4>
 						<!--<p>Các loại mã giảm giá</p>
 						<label class="radio">
 							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
@@ -61,7 +61,7 @@
 							Thành viên VIP
 						</label>-->
 						<a><input type="text" placeholder="Nhập ở đây"></a><br>
-						<a><button class="btn" type="button">Xác Nhận</button></a>
+						<a><button class="btn" type="button">Áp Dụng</button></a>
 						<hr>
 						<p class="cart-total right">
 							<strong>Tổng Hóa Đơn</strong>: {{number_format($subtotal)}} đ<br>
