@@ -4,8 +4,8 @@
 /* common
 ----------------------------------------------------------------------------- */
 body{
-	font-size: 12px;
-	font-family: 'Open Sans', arial, tahoma, sans-serif;
+	font-size: 18px;
+    font-family: -webkit-pictograph;
 	background:url(../images/bg.png) repeat 0 0 fixed;
 }
 label, input, button, select, textarea{
@@ -1308,4 +1308,27 @@ section.our_client .row{
     .pull-right{
     	float: left;
 
+    }
+
+    /*TRANH THANH TOÁN BẰNG TÀI KHOẢN ĐÃ ĐĂNG KY*/
+    .Thanhtoan{
+    	background-image: url(../images/anhnen.jpg);
+    }
+
+    .bangthongtindonhang
+    {
+    	border: 2px;
+    	width: 100%;
+    	border-collapse: collapse;
+    }
+    .bangthongtindonhang th{
+    	text-align: center;
+    }
+    .bangthongtindonhang td{
+    	text-align: center;
+    }
+
+    #donhanng{
+    	font-size: 16px;
+    	color: blue;
     }

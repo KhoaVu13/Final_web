@@ -1,12 +1,14 @@
 @extends('master')
-@section('content')		
-			<section class="header_text sub">
-			<!-- <img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" > -->
-				<h4><span>Thanh Toán</span></h4>
-			</section>	
-			<section class="main-content">
-				<div class="row">
-					<div class="span12">
+@section('content')	
+<section class="Thanhtoan">
+	<section class="header_text sub">
+		<!-- <img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" > -->
+		<h2><img src="themes/images/tuihang.png"><span>Thanh Toán</span></h2>
+		<h4><span>Giao Hàng Bằng Địa Chỉ Tài Khoản Khách Hàng Đăng Nhập</span></h4>
+	</section>	
+	<section class="main-content">
+		<div class="row">
+			<div class="span12">
 						<!-- <div class="accordion" id="accordion2">
 							<div class="accordion-group">
 								<div class="accordion-heading">
@@ -184,36 +186,52 @@
 								</div>
 							</div>
 						</div>	 -->	
-						@if(Session::has('thongbao')){{Session::get('thongbao')}}
+						@if(Session::has('thongbao'))
+						{{Session::get('thongbao')}}
 						@else
 						<form action="{{route('thanhtoan')}}" method="post">
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<div style="color: red"><strong>
-													@foreach($errors->all() as $err)
-													{{$err}}
-													@endforeach	
-													</strong></div>
-							<div>Thông Tin Đơn Hàng</div>
-							<div>--Tên Khách Hàng: {{Auth::user()->full_name}}</div>
-							<div>--Địa Chỉ Giao Hàng: {{Auth::user()->address}}</div>
-							<div>--Ngày Đặt Hàng: {{date('Y-m-d')}}</div>
-							<div>--Hàng Trong Giỏ: </div>
-							<div>
-								@foreach($content as $c)
-								<img style="width: 30px ; height: 30px" src="themes/images/sport/{{$c->options->img}}">
-								<div>{{$c->name}}: {{$c->qty}} cái</div>
-								<div>Giá: {{number_format($c->price*$c->qty)}} đ / {{$c->qty}} cái</div>
-								@endforeach
+								@foreach($errors->all() as $err)
+								{{$err}}
+								@endforeach	
+							</strong></div>
+							<div class="thongtindonhang">				
+								<div id="donhang">Thông Tin Đơn Hàng</div>
+								<br>
+								<table class="bangthongtindonhang">
+									<tr>
+										<th>TÊN KHÁCH HÀNG</th>
+										<th>ĐỊA CHỈ GIAO HÀNG</th>
+										<th>NGÀY GIAO HÀNG</th>
+									</tr>
+									<tr>
+										<td>{{Auth::user()->full_name}}</td>
+										<td>{{Auth::user()->address}}</td>
+										<td>{{date('Y-m-d')}}</td>
+									</tr>
+
+								</table>
+								<br>
+								<div>Hàng Trong Giỏ: </div>
+								<div>
+									@foreach($content as $c)
+									<img style="width: 60px ; height: 60px" src="themes/images/sport/{{$c->options->img}}">
+									<div>{{$c->name}}: {{$c->qty}} cái</div>
+									<div>Giá: {{number_format($c->price*$c->qty)}} đ / {{$c->qty}} cái</div>
+									@endforeach
+								</div>
+								<div>----------Tổng Hóa Đơn: {{number_format($subtotal)}} đ----------</div>
+								<div><input type="radio" name="payment_method" value="COD"> Thanh Toán Khi Nhận Hàng</div>
+								<div><input type="radio" name="payment_method" value="OP"> Internet Banking / Visa</div>
+								<div><label for="notes">Ghi Chú</label><textarea id="notes" name="notes"></textarea></div>
+								<p class="buttons center"><button type="submit">Bạn Muốn Giao Hàng Tới Địa Chỉ Này</button></p>
+								<p class="buttons center"><a href="{{route('taikhoan')}}">Lịch sử mua hàng</a></p>
 							</div>
-							<div>----------Tổng Hóa Đơn: {{number_format($subtotal)}} đ----------</div>
-							<div><input type="radio" name="payment_method" value="COD"> Thanh Toán Khi Nhận Hàng</div>
-							<div><input type="radio" name="payment_method" value="OP"> Internet Banking / Visa</div>
-							<div><label for="notes">Ghi Chú</label><textarea id="notes" name="notes"></textarea></div>
-							<p class="buttons center"><button type="submit">Bạn Muốn Giao Hàng Tới Địa Chỉ Này</button></p>
-							<p class="buttons center"><a href="{{route('taikhoan')}}">Lịch sử mua hàng</a></p>
 						</form>
 					</div>
-						@endif
+					@endif
 				</div>
-			</section>			
-@endsection			
+			</section>	
+		</section>			
+		@endsection			
