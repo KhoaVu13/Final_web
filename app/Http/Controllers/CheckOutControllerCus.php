@@ -51,6 +51,7 @@ class CheckOutControllerCus extends Controller
 
         $bill = new Bills;
         $bill->id_customer = $customer->id;
+        $bill->id_user = Auth::user()->id;
         $bill->date_order = date('Y-m-d');
         $bill->total = $subtotal;
         $bill->payment = $req->payment_method;
