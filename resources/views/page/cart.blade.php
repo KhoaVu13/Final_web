@@ -29,7 +29,7 @@
 									<td><strong style="color: blue">{{$c->name}}</strong></td>
 
 									<td>
-										<input id="{{$c->rowId}}" class="qty Update" min="1" type="number" value="{{$c->qty}}">
+										<input id="{{$c->rowId}}" class="qty Update" type="number" value="{{$c->qty}}">
 									</td>
 									
 									<!--<td><a style="color: blue">{{$c->qty}}</a></td>-->

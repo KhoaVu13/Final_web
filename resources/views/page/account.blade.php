@@ -10,15 +10,18 @@
 				<div>Ngày mua: {{$a->date_order}}</div>
 				<div>Tổng Tiền: {{number_format($a->total)}} ₫</div>
 				<div>Hình thức thanh toán: {{$a->payment}}</div>
-				@if($a->status == 'DXL')
+				@if($a->status == 'Đang xử lý')
 				<div>Trạng thái đơn hàng: <strong>Đang xử lý</strong></div><br>
-				@elseif($a->status == 'DVC')
+				<button onclick="location.href='account/{{$a->id}}'">Hủy đơn hàng</button>
+				</form>
+				@elseif($a->status == 'Đang vận chuyển')
 				<div>Trạng thái đơn hàng: Đang xử lý ----- <strong>Đang vận chuyển</strong> </div><br>
-				@elseif($a->status == 'DTT')
+				@elseif($a->status == 'Đã thanh toán')
 				<div>Trạng thái đơn hàng: Đang xử lý ----- Đang vận chuyển ----- <strong>Đã thanh toán</strong></div><br>
-				@elseif($a->status == 'HUY')
+				@elseif($a->status == 'Hủy')
 				<div>Trạng thái đơn hàng: Đang xử lý ----- Đang vận chuyển ----- Đã thanh toán ----- <strong>Hủy</strong></div><br>
 				@endif
 				@endforeach
+				
 			</section>			
 @endsection			

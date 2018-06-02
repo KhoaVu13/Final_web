@@ -39,7 +39,7 @@ class CheckOutController extends Controller
         $bill->total = $subtotal;
         $bill->payment = $req->payment_method;
         $bill->note = $req->notes;
-        $bill->status='DXL';
+        $bill->status='Đang xử lý';
         $bill->save();
 
 
