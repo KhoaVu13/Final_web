@@ -6,12 +6,12 @@
 			<section class="main-content">
 				<div><strong style="color: red;">Đơn hàng của bạn</strong></div><br>
 				@foreach($acc as $a)
-				<div><a href="{{route('lichsu',$a->id)}}">Mã Đơn Hàng: {{$a->id}}</a></div>
+				<div><a href="{{route('lichsu',$a->id)}}">Mã Đơn Hàng: {{$a->id}} (Xem thông tin đơn hàng)</a></div>
 				<div>Ngày mua: {{$a->date_order}}</div>
 				<div>Tổng Tiền: {{number_format($a->total)}} ₫</div>
 				<div>Hình thức thanh toán: {{$a->payment}}</div>
 				@if($a->status == 'Đang xử lý')
-				<div>Trạng thái đơn hàng: <strong>Đang xử lý</strong></div><br>
+				<div>Trạng thái đơn hàng: <strong>Đang xử lý</strong></div>
 				<button onclick="location.href='account/{{$a->id}}'">Hủy đơn hàng</button>
 				</form>
 				@elseif($a->status == 'Đang vận chuyển')

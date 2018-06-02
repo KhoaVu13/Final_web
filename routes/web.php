@@ -17,8 +17,6 @@ Route::get('/', function () {
 
 Route::get('index',['as' =>'trangchu','uses'=>'PageController@getIndex']);
 
-Route::get('contact',['as' =>'lienhe','uses'=>'PageController@getContact']);
-
 Route::get('p_d/{id}',['as' =>'thongtinsanpham','uses'=>'PageController@getPD']);
 
 Route::get('products/{type}',['as' =>'sanpham','uses'=>'PageController@getProducts']);
@@ -53,5 +51,8 @@ Route::get('account/{id}',['as' =>'taikhoan1','uses'=>'AccountController@getAcco
 Route::get('history/{id}',['as'=>'lichsu','uses'=>'AccountController@getHistory']);
 
 Route::get('search',['as'=>'search','uses'=>'SearchController@getSearch']);
+
+Route::get('contact',['as' =>'lienhe','uses'=>'AccountController@getContact']);
+Route::post('contact',['as' =>'lienhe','uses'=>'AccountController@postContact']);
 
 
