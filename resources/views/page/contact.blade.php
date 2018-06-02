@@ -5,7 +5,7 @@
 				<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3918.214904905336!2d106.8022845986127!3d10.871252770192879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zS2h1IHBo4buRIDYsIFAuTGluaCBUcnVuZywgUS5UaOG7pyDEkOG7qWMsIFRwLkjhu5MgQ2jDrSBNaW5oLg!5e0!3m2!1svi!2s!4v1527953515926" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen scrolling="no" marginheight="0" marginwidth="0"></iframe>
 			</section>
 			<section class="header_text sub">
-				<h4><span>Contact Us</span></h4>
+				<h4><span>Liên hệ</span></h4>
 			</section>
 			<section class="main-content">				
 				<div class="row">				
