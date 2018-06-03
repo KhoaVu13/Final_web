@@ -224,7 +224,7 @@
 										</div>
 									</div>
 									<div id="thongtindonhangright">
-										<img style="width: 120px ; height: 120px" src="themes/images/sport/{{$c->options->img}}">
+										<img style="width: 90px ; height: 90px" src="themes/images/sport/{{$c->options->img}}">
 									</div>
 										@endforeach	
 								</div>
