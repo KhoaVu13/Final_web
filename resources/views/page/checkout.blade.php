@@ -197,7 +197,7 @@
 								@endforeach	
 							</strong></div>
 							<div class="thongtindonhang">				
-								<div id="donhang">Thông Tin Đơn Hàng</div>
+								<div id="donhang"><h3>Thông Tin Đơn Hàng</h3></div>
 								<br>
 								<table class="bangthongtindonhang">
 									<tr>
@@ -210,28 +210,40 @@
 										<td>{{Auth::user()->address}}</td>
 										<td>{{date('Y-m-d')}}</td>
 									</tr>
-
 								</table>
 								<br>
-								<div>Hàng Trong Giỏ: </div>
+								<div><h4>Hàng Trong Giỏ:</h4></div>
 								<div>
+
 									@foreach($content as $c)
-									<img style="width: 60px ; height: 60px" src="themes/images/sport/{{$c->options->img}}">
-									<div>{{$c->name}}: {{$c->qty}} cái</div>
-									<div>Giá: {{number_format($c->price*$c->qty)}} đ / {{$c->qty}} cái</div>
-									@endforeach
+									<br>
+									<div id="thongtindonhangleft">
+										<div id="ndsanpham">
+										<div >{{$c->name}}: {{$c->qty}} cái</div>
+										<div>Giá: {{number_format($c->price*$c->qty)}} đ / {{$c->qty}} cái</div>
+										</div>
+									</div>
+									<div id="thongtindonhangright">
+										<img style="width: 120px ; height: 120px" src="themes/images/sport/{{$c->options->img}}">
+									</div>
+										@endforeach	
 								</div>
-								<div>----------Tổng Hóa Đơn: {{number_format($subtotal)}} đ----------</div>
+							</div>
+							<br>
+							<br>
+							<div id="tonghoadon">
+								<h4>Tổng Hóa Đơn: {{number_format($subtotal)}} đ</h4>
 								<div><input type="radio" name="payment_method" value="COD"> Thanh Toán Khi Nhận Hàng</div>
 								<div><input type="radio" name="payment_method" value="OP"> Internet Banking / Visa</div>
 								<div><label for="notes">Ghi Chú</label><textarea id="notes" name="notes"></textarea></div>
-								<p class="buttons center"><button type="submit">Bạn Muốn Giao Hàng Tới Địa Chỉ Này</button></p>
-								<p class="buttons center"><a href="{{route('taikhoan')}}">Lịch sử mua hàng</a></p>
-							</div>
-						</form>
-					</div>
-					@endif
+							<p class="buttons center"><button id="button" type="submit">Bạn Muốn Giao Hàng Tới Địa Chỉ Này</button></p>
+							<p class="buttons center"><a href="{{route('taikhoan')}}">Lịch sử mua hàng</a></p>
+						</div>
+						<div>
+					</form>
 				</div>
-			</section>	
-		</section>			
-		@endsection			
+				@endif
+			</div>
+		</section>	
+	</section>			
+	@endsection			
